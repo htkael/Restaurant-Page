@@ -175,3 +175,11 @@ button:hover {
 .contentBack + .menuSection {
   margin-top: 3rem;
 }
+
+.contactList {
+  margin-left: 10px;
+  display: grid;
+  gap: 5px;
+  overflow: auto;
+  padding: 5px;
+}

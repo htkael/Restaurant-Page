@@ -1,9 +1,11 @@
 import "./styles.css";
 import { menuPage } from "./menu.js";
+import { contactPage } from "./contact.js";
 import { createElement, createSection } from "./utils";
 
 const homeButton = document.querySelector("#home");
 const menuButton = document.querySelector("#menu");
+const contactButton = document.querySelector("#contact");
 
 const homePage = () => {
   const content = document.querySelector("#content");
@@ -60,4 +62,5 @@ const homePage = () => {
 
 homeButton.addEventListener("click", homePage);
 menuButton.addEventListener("click", menuPage);
+contactButton.addEventListener("click", contactPage);
 document.addEventListener("DOMContentLoaded", homePage);
