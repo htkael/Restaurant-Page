@@ -1,0 +1,149 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: url(icons/frog.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#body {
+  display: grid;
+  grid-template-rows: 0.5fr 10fr 0.5fr;
+  justify-items: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  height: 100%;
+}
+
+#content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: #d9f99d;
+  padding: 2.5rem;
+  gap: 2.5rem;
+  border-radius: 4rem;
+}
+.headerBack {
+  background-color: #4d7c0f;
+  width: 100%;
+  max-width: 800px;
+  max-height: 100px;
+  clip-path: polygon(
+    0 33.3%,
+    6% 0,
+    94% 0,
+    100% 33.3%,
+    100% 66.6%,
+    94% 100%,
+    6% 100%,
+    0 66.6%
+  );
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.pageHeader {
+  background-color: #84cc16;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 97%;
+  height: 80%;
+  clip-path: polygon(
+    0 33.3%,
+    6% 0,
+    94% 0,
+    100% 33.3%,
+    100% 66.6%,
+    94% 100%,
+    6% 100%,
+    0 66.6%
+  );
+  font-size: 2.5rem;
+}
+
+.contentBack {
+  background-color: #4d7c0f;
+  width: 100%;
+  min-height: 250px;
+  max-width: 500px;
+  clip-path: polygon(
+    0 33.3%,
+    6% 0,
+    94% 0,
+    100% 33.3%,
+    100% 66.6%,
+    94% 100%,
+    6% 100%,
+    0 66.6%
+  );
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.content {
+  font-size: 1rem;
+  width: 96%;
+  height: 85%;
+  padding: 1rem;
+}
+
+#hours {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+#footer {
+  background-color: #d9f99d;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+}
+
+header {
+  background-color: #d9f99d;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: end;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  border: 1px solid;
+  border-bottom: none;
+}
+button {
+  height: 50px;
+  width: 100px;
+  background-color: #d9f99d;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #84cc16;
+}
