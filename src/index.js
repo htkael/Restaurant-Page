@@ -1,45 +1,35 @@
 import "./styles.css";
+import { menuPage } from "./menu.js";
+import { createElement, createSection } from "./utils";
+
+const homeButton = document.querySelector("#home");
+const menuButton = document.querySelector("#menu");
 
 const homePage = () => {
-  const body = document.querySelector("#body");
-  const content = document.createElement("div");
-  content.id = "content";
-  body.append(content);
+  const content = document.querySelector("#content");
+  content.innerHTML = "";
 
-  const headerBack = document.createElement("div");
-  headerBack.classList.add("headerBack");
-  content.append(headerBack);
-  const header = document.createElement("h1");
-  header.classList.add("pageHeader");
-  header.textContent = "Froggy's Fable Cafe";
+  // Header Section
+  const headerBack = createElement("div", ["headerBack"]);
+  const header = createElement("h1", ["pageHeader"], "Froggy's Fable Cafe");
   headerBack.append(header);
+  content.append(headerBack);
 
-  const infoBack = document.createElement("div");
-  infoBack.classList.add("contentBack");
+  // Info Section
+  const infoBack = createSection(
+    "What We Offer:",
+    `Dive into Froggy’s Fable Café, where the finest pond-side pancakes
+    and scrumptious swamp-inspired porridge await you! With a lively
+    atmosphere reminiscent of a lush wetland, the friendly service makes
+    you feel right at home. This is the kind of café that keeps me
+    hopping back for more!`
+  );
   content.append(infoBack);
-  const info = document.createElement("div");
-  info.classList.add("pageHeader");
-  info.classList.add("content");
-  info.textContent = `Dive into Froggy’s Fable Café, where the finest pond-side pancakes
-            and scrumptious swamp-inspired porridge await you! With a lively
-            atmosphere reminiscent of a lush wetland, the friendly service makes
-            you feel right at home. This is the kind of café that keeps me
-            hopping back for more!`;
-  infoBack.append(info);
 
-  const hoursBack = document.createElement("div");
-  hoursBack.classList.add("contentBack");
-  content.append(hoursBack);
-  const hours = document.createElement("div");
-  hours.classList.add("pageHeader");
-  hours.classList.add("content");
-  hoursBack.append(hours);
-  const hTwo = document.createElement("h2");
-  hTwo.textContent = "Hours";
-  hours.append(hTwo);
+  // Hours Section
+  const hoursContent = createElement("div", []);
   const hoursList = document.createElement("div");
   hoursList.id = "hours";
-  hours.append(hoursList);
 
   const times = [
     { day: "Sunday", time: "8am - 8pm" },
@@ -52,31 +42,22 @@ const homePage = () => {
   ];
 
   times.forEach((entry) => {
-    const hoursDiv = document.createElement("div");
-    hoursDiv.textContent = `${entry.day}: ${entry.time}`;
+    const hoursDiv = createElement("div", [], `${entry.day}: ${entry.time}`);
     hoursList.append(hoursDiv);
   });
 
-  const locationBack = document.createElement("div");
-  locationBack.classList.add("contentBack");
-  content.append(locationBack);
+  const hoursSection = createSection("Hours", "");
+  hoursSection.querySelector(".content").append(hoursList);
+  content.append(hoursSection);
 
-  const location = document.createElement("div");
-  location.classList.add("pageHeader");
-  location.classList.add("content");
-  locationBack.append(location);
-
-  const locationHead = document.createElement("h2");
-  locationHead.textContent = "Location";
-  location.append(locationHead);
-
-  const address = document.createElement("div");
-  address.textContent = "123 Lily Pad Lane, Ribbitville, Frogtopia";
-  location.append(address);
-
-  const footer = document.createElement("div");
-  footer.id = "footer";
-  footer.textContent = "Credits";
-  body.append(footer);
+  // Location Section
+  const locationSection = createSection(
+    "Location",
+    "123 Lily Pad Lane, Ribbitville, Frogtopia"
+  );
+  content.append(locationSection);
 };
+
+homeButton.addEventListener("click", homePage);
+menuButton.addEventListener("click", menuPage);
 document.addEventListener("DOMContentLoaded", homePage);

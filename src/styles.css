@@ -55,6 +55,26 @@ body {
   align-items: center;
 }
 
+.menuSection {
+  background-color: #4d7c0f;
+  width: 100%;
+  max-width: 400px;
+  max-height: 100px;
+  clip-path: polygon(
+    0 33.3%,
+    6% 0,
+    94% 0,
+    100% 33.3%,
+    100% 66.6%,
+    94% 100%,
+    6% 100%,
+    0 66.6%
+  );
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
 .pageHeader {
   background-color: #84cc16;
   display: grid;
@@ -146,4 +166,12 @@ button {
 
 button:hover {
   background-color: #84cc16;
+}
+
+.headerBack + .menuSection {
+  margin-top: 3rem;
+}
+
+.contentBack + .menuSection {
+  margin-top: 3rem;
 }
